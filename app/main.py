@@ -1,13 +1,15 @@
-def go_to_cafe(list_friends: dict, cafe,
-               friends_no_mask=int,
-               friends_without_mask=None,
-               masks_to_buy=None) -> None:
+from app import cafe
+
+
+def go_to_cafe(list_friends: dict,
+               friends_no_mask: dict,
+               friends_without_mask: dict,
+               masks_to_buy: dict) -> None:
 
     for friend in list_friends:
         if not (friend.vaccinated):
             return "All friends should be vaccinated"
 
-    friends_without_masks = 0
     for friend in list_friends:
         if not friend.has_mask:
             friends_no_mask += 1
@@ -16,4 +18,3 @@ def go_to_cafe(list_friends: dict, cafe,
         return f"Friends should buy {masks_to_buy} masks"
 
     return f"Friends can go to {cafe.name}"
-
