@@ -5,15 +5,19 @@ import datetime
 
 
 class Cafe:
-    def visit_cafe(self, friends: list, cafe: Cafe) -> None:
-        if "vaccine" not in friends:
+    def __init__(self, name):
+        self.name = name
+
+
+    def visit_cafe(self, visitor: dict) -> str:
+        if "vaccine" not in visitor:
             raise NotVaccinatedError("Visitor is not vaccinated")
 
-        exp_date = friends["vaccine"]["expiration_date"]
+        exp_date = visitor["vaccine"]["expiration_date"]
         if exp_date < datetime.date.today():
             raise OutdatedVaccineError("Vaccine is expired")
 
-        if not friends.get("wearing_a_mask"):
+        if not visitor.get("wearing_a_mask"):
             raise NotWearingMaskError("Visitor is not wearing a mask")
 
         return f"Welcome to {self.name}"
