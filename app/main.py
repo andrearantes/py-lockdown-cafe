@@ -9,5 +9,5 @@ def go_to_cafe(friends: list, cafe: Cafe) -> str:
         if not (friends.mask):
             raise ValueError("Friends should buy {masks_to_buy} masks")
 
-    except ValueError as ve:
+    except ValueError:
         raise ValueError("Friends can go to {cafe.name}")
