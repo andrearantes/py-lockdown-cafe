@@ -16,3 +16,4 @@ def go_to_cafe(list_friends: dict, cafe,
         return f"Friends should buy {masks_to_buy} masks"
 
     return f"Friends can go to {cafe.name}"
+
