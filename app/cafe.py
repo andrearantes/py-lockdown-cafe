@@ -5,9 +5,8 @@ import datetime
 
 
 class Cafe:
-    def __init__(self, name):
+    def __init__(self, name: dict) -> None:
         self.name = name
-
 
     def visit_cafe(self, visitor: dict) -> str:
         if "vaccine" not in visitor:
